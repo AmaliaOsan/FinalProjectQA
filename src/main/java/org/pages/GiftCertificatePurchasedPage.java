@@ -1,14 +1,15 @@
-package org.example;
+package org.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AccountCreatedPage extends BasePage{
-    public AccountCreatedPage(WebDriver driver) {
+public class GiftCertificatePurchasedPage extends  BasePage{
+    public GiftCertificatePurchasedPage(WebDriver driver) {
+
         this.driver = driver;
     }
 
-    private By headerElement = By.xpath("//h1[@class='page-title my-3']");
+    private By headerElement = By.xpath("//*[@id=\"content\"]/h1");
 
     public String getHeaderText (){
         return driver.findElement(headerElement).getText();

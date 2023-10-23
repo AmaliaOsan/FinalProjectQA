@@ -1,22 +1,22 @@
-import org.example.AccountCreatedPage;
-import org.example.RegisterAccountPage;
-import org.example.SearchResultsPage;
-import org.example.WishlistPage;
-import org.openqa.selenium.WebDriver;
+import org.pages.AccountCreatedPage;
+import org.pages.RegisterAccountPage;
+import org.pages.SearchResultsPage;
+import org.pages.WishlistPage;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static Util.TestUtil.generateRandomEmail;
 
-public class WishlistTests {
-    private WebDriver driver;
+public class WishlistTests extends BaseTest{
     private RegisterAccountPage registerAccountPage;
     private WishlistPage wishlistPage;
     private SearchResultsPage searchResultsPage;
     private String registerPageUrl = "https://ecommerce-playground.lambdatest.io/index.php?route=account/register";
+    private Actions action;
 
     @BeforeClass
     public void setUp (){
@@ -26,24 +26,33 @@ public class WishlistTests {
         wishlistPage = new WishlistPage(driver);
         searchResultsPage = new SearchResultsPage(driver);
         driver.get("https://ecommerce-playground.lambdatest.io/index.php?route=account/register");
+        action = new Actions(driver);
         creatAccount();
-    }
 
-    @BeforeMethod
-    public void beforeMethod (){
-        System.out.println("Navigate to " + registerPageUrl);
     }
 
     @Test
-    public void addItemToWishlistTest () {
+    public void addItemToWishlistTest () throws Exception{
+        String expectedResult = "No results!";
         wishlistPage.clickWishlist();
-        String actualResult= wishlistPage.getNoResultsElementText();
-        String expectedResult= "No results!";
+        String actualResult = wishlistPage.getNoResultsElementText();
         Assert.assertEquals(actualResult, expectedResult, "Text from element is not the expected one.");
         wishlistPage.enterTextSearch("Apple Cinema 30\"");
         wishlistPage.clickSearchButton();
-        searchResultsPage.clickFirstItem();
-
+        Thread.sleep(1000);
+        WebElement item = searchResultsPage.getFirstItem();
+        action.moveToElement(item).build().perform();
+        Thread.sleep(1000);
+        WebElement button = searchResultsPage.getAddToWishlistButton();
+        action.moveToElement(button).click().build().perform();
+        Thread.sleep(5000);
+        searchResultsPage.clickClosePopupButton();
+        searchResultsPage.clickWishlist();
+        int noOfItems = wishlistPage.getWishlistItems().size();
+        Assert.assertTrue(noOfItems == 1, "Wishlist is empty");
+        wishlistPage.clickRemoveItemFromWishlistButton();
+        actualResult = wishlistPage.getNoResultsElementText();
+        Assert.assertEquals(actualResult, expectedResult, "Text from element is not the expected one.");
     }
 
 

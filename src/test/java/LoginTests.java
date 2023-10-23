@@ -1,4 +1,5 @@
-import org.example.LoginPage;
+import org.pages.ForgottenPasswordPage;
+import org.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -31,8 +32,16 @@ public class LoginTests {
         String actualValue = loginPage.getErrorMessage();
         String expectedValue = "Warning: No match for E-Mail Address and/or Password.";
         Assert.assertEquals(actualValue, expectedValue, "The actual value is not the same as the expected one.");
+    }
 
-
+    @Test
+    public void forgottenPasswordTest (){
+        ForgottenPasswordPage forgottenPasswordPage = new ForgottenPasswordPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.clickForgottenPasswordButton();
+        String actualText = forgottenPasswordPage.getForgottenPasswordHeaderText();
+        String expectedText = "Forgot Your Password?";
+        Assert.assertEquals(actualText, expectedText, "Actual text is not the expected one.");
     }
 
 
