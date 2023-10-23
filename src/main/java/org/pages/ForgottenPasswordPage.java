@@ -8,9 +8,7 @@ public class ForgottenPasswordPage extends BasePage {
 
         this.driver = driver;
     }
-
     private By headerElement = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/h1");
-
     public String getForgottenPasswordHeaderText (){
         return driver.findElement(headerElement).getText();
     }

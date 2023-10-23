@@ -8,9 +8,7 @@ public class ReturnProductRequestSubmittedPage extends BasePage{
 
         this.driver = driver;
     }
-
     private By headerElement = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/h1");
-
     public String getHeaderText (){
         return driver.findElement(headerElement).getText();
     }

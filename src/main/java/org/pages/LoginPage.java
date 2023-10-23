@@ -14,16 +14,20 @@ public class LoginPage extends BasePage {
  private By forgottenPasswordButton = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/div/div[2]/div/div/form/div[2]/a");
 
 
-    public void insertEmail(String email) {driver.findElement(emailInput).sendKeys(email);}
+    public void insertEmail(String email) {
+        driver.findElement(emailInput).sendKeys(email);}
 
-    public void insertPassword(String password) {driver.findElement(passwordInput).sendKeys(password);}
+    public void insertPassword(String password) {
+        driver.findElement(passwordInput).sendKeys(password);}
 
     public void clickLogin(){
+
         driver.findElement(loginButton).click();
     }
 
     public void clickForgottenPasswordButton (){
-     driver.findElement(forgottenPasswordButton).click();
+
+        driver.findElement(forgottenPasswordButton).click();
 }
 
 }

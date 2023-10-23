@@ -124,20 +124,6 @@ public class AddressBookTests extends BaseTest {
         Assert.assertEquals(actualText, expectedText, "Actual text is not the expected one.");
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void createAccount() {
         driver.get(registerUrl);
         registerAccountPage.insertFirstName("John");

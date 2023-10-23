@@ -12,9 +12,9 @@ public class BaseTest {
         driver = new ChromeDriver();
     }
 
-    //@AfterTest
-    //public void tearDown() {
-        //System.out.println("Closing the driver ...");
-        //driver.quit();
-    //}
+    @AfterTest
+    public void tearDown() {
+        System.out.println("Closing the driver ...");
+        driver.quit();
+    }
 }

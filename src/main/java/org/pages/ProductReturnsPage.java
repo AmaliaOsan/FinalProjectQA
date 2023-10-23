@@ -23,70 +23,40 @@ public class ProductReturnsPage extends BasePage {
 
         driver.findElement(orderIdElementInput).sendKeys(orderIdElement);
     }
-
     public void insertProductNameElement (String productNameElement) {
 
         driver.findElement(productNameElementInput).sendKeys(productNameElement);
     }
-
     public void insertProductCodeElement (String productCodeElement) {
 
         driver.findElement(productCodeElementInput).sendKeys(productCodeElement);
     }
-
     public void checkReasonForReturnButton () {
 
         driver.findElement(reasonForReturnButton).click();
     }
-
     public void checkProductIsOpenedButton () {
 
         driver.findElement(productIsOpenedButton).click();
     }
-
     public void clickSubmitButton () {
 
         driver.findElement(submitButton).click();
     }
-
     public String getOrderIdErrorMessage (){
 
         return driver.findElement(orderIdError).getText();
     }
-
     public String getProductNameErrorMessage (){
 
         return driver.findElement(productNameError).getText();
     }
-
     public String getProductCodeErrorMessage (){
 
         return driver.findElement(productCodeError).getText();
     }
-
     public String getReasonForReturnErrorMessage (){
 
         return driver.findElement(reasonForReturnError).getText();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-

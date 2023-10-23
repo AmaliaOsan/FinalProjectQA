@@ -43,6 +43,4 @@ public class LoginTests {
         String expectedText = "Forgot Your Password?";
         Assert.assertEquals(actualText, expectedText, "Actual text is not the expected one.");
     }
-
-
 }

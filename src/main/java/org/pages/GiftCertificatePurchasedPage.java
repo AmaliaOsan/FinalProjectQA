@@ -8,9 +8,7 @@ public class GiftCertificatePurchasedPage extends  BasePage{
 
         this.driver = driver;
     }
-
     private By headerElement = By.xpath("//*[@id=\"content\"]/h1");
-
     public String getHeaderText (){
         return driver.findElement(headerElement).getText();
     }

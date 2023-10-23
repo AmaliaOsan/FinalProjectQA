@@ -19,27 +19,20 @@ public class RegisterAccountPage extends BasePage {
     private By continueButton = By.xpath("//input[@value='Continue']");
     private By firstNameError = By.xpath(".//div[@class = 'text-danger']");
     private By lastNameError = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/form/fieldset[1]/div[3]/div/div");
-
     private By emailError = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/form/fieldset[1]/div[4]/div/div");
     private By phoneNumberError = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/form/fieldset[1]/div[5]/div/div");
-
     private By passwordError = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/form/fieldset[2]/div[1]/div/div");
-
     private By confirmPasswordError = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div/form/fieldset[2]/div[2]/div/div");
-
-
 
 
     public void insertFirstName(String firstName) {
 
         driver.findElement(firstNameInput).sendKeys(firstName);
     }
-
     public void insertLastName(String lastName) {
 
         driver.findElement(lastNameInput).sendKeys(lastName);
     }
-
     public void insertEmail (String email){
 
         driver.findElement(emailInput).sendKeys(email);
@@ -67,7 +60,6 @@ public class RegisterAccountPage extends BasePage {
 
         return driver.findElement(firstNameError).getText();
     }
-
     public String getLastNameErrorMessage (){
 
         return driver.findElement(lastNameError).getText();
@@ -88,5 +80,4 @@ public class RegisterAccountPage extends BasePage {
 
         return driver.findElement(confirmPasswordError).getText();
     }
-
 }

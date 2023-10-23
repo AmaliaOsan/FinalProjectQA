@@ -96,9 +96,6 @@ public class DashboardTests extends BaseTest{
                 "Logo Lambda Test element text is not the expected one");
     }
 
-
-
-
     public void createAccount() {
         driver.get(registerUrl);
         registerAccountPage.insertFirstName("John");

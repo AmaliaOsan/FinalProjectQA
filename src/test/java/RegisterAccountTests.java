@@ -144,6 +144,6 @@ public class RegisterAccountTests {
         Assert.assertEquals(actualValue, expectedValue, "The error message is not the same as the expected one.");
     }
 
-    //@AfterTest
-    //public void tearDown() {driver.quit();}
+    @AfterTest
+    public void tearDown() {driver.quit();}
 }

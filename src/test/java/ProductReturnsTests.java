@@ -92,19 +92,6 @@ public class ProductReturnsTests extends BaseTest{
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Actual error message is not the expected one.");
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void createAccount() {
         driver.get(registerUrl);
         registerAccountPage.insertFirstName("John");

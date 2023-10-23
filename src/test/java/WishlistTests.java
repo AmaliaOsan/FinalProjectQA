@@ -28,9 +28,7 @@ public class WishlistTests extends BaseTest{
         driver.get("https://ecommerce-playground.lambdatest.io/index.php?route=account/register");
         action = new Actions(driver);
         creatAccount();
-
     }
-
     @Test
     public void addItemToWishlistTest () throws Exception{
         String expectedResult = "No results!";
@@ -55,7 +53,6 @@ public class WishlistTests extends BaseTest{
         Assert.assertEquals(actualResult, expectedResult, "Text from element is not the expected one.");
     }
 
-
     public void creatAccount(){
         System.out.println("Creating new account to be used in tests.");
         registerAccountPage.insertFirstName("John");
@@ -71,5 +68,4 @@ public class WishlistTests extends BaseTest{
         String expectedText = "Your Account Has Been Created!";
         Assert.assertEquals(actualText, expectedText, "Actual text is not the expected one.");
     }
-
 }

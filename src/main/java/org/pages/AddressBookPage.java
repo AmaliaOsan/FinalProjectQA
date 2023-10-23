@@ -9,9 +9,6 @@ public class AddressBookPage extends BasePage {
         this.driver = driver;
     }
 
-
-
-
     private By firstNameElementInput = By.id("input-firstname");
     private By lastNameElementInput = By.id("input-lastname");
     private By address1ElementInput = By.id("input-address-1");
@@ -32,22 +29,18 @@ public class AddressBookPage extends BasePage {
 
         driver.findElement(firstNameElementInput).sendKeys(firstNameElement);
     }
-
     public void insertLastNameElement (String lastNameElement) {
 
         driver.findElement(lastNameElementInput).sendKeys(lastNameElement);
     }
-
     public void insertAddress1Element (String address1Element) {
 
         driver.findElement(address1ElementInput).sendKeys(address1Element);
     }
-
     public void insertCityElement (String cityElement) {
 
         driver.findElement(cityElementInput).sendKeys(cityElement);
     }
-
     public void insertPostCodeElement (String postCodeElement) {
 
         driver.findElement(postCodeElementInput).sendKeys(postCodeElement);
@@ -59,13 +52,13 @@ public class AddressBookPage extends BasePage {
         driver.findElement(regionStateButton).click();
     }
     public void clickContinueButton (){
+
         driver.findElement(continueButton).click();
     }
     public String getSuccessfullyAddedAddressMessageText (){
 
         return driver.findElement(successfullyAddedAddressMessage).getText();
     }
-
     public String getFirstNameErrorMessage (){
 
         return driver.findElement(firstNameError).getText();
@@ -90,6 +83,4 @@ public class AddressBookPage extends BasePage {
 
         return driver.findElement(regionStateError).getText();
     }
-
-
 }

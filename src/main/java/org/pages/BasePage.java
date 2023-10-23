@@ -9,16 +9,14 @@ public class BasePage {
     private By wishlistHeartElement = By.xpath(".//a[@aria-label = 'Wishlist']");
     private By searchInput = By.name("search");
 
-
     public String getErrorMessage (){
 
         return driver.findElement(errorMessage).getText();
     }
-
     public void clickWishlist(){
+
         driver.findElement(wishlistHeartElement).click();
     }
-
     public void enterTextSearch (String searchText){
 
         driver.findElement(searchInput).sendKeys(searchText);

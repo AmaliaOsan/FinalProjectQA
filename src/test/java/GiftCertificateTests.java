@@ -86,21 +86,6 @@ public class GiftCertificateTests extends BaseTest{
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void createAccount() {
         driver.get(registerUrl);
         registerAccountPage.insertFirstName("John");
